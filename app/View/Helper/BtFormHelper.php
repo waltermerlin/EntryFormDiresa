@@ -1,6 +1,6 @@
 <?php
     /*-----------------------------------------*/
-    /*  Bootstrap BtForm Module Css  v 1.0  */
+    /*  Bootstrap BtForm Module Css  v 1.0.1  */
     /*-----------------------------------------*/
     
     App::uses('AppHelper', 'View/Helper');
@@ -8,32 +8,38 @@
     class BtFormHelper extends AppHelper {
         public $helpers = array('Html', 'Form');
 
+        public function create($options = array()) {
+            
+            $options['class'] = 'form-horizontal';
+            return $this->Form->create($options);
+        }
+
         public function input($name, $label = null, $options = array()) {
+            
             // Use the HTML helper to output
             $h_label = '';
             
             // default options:
             $options['label'] = false;
-        	$options['div'] = false;
+            $options['div'] = false;
             $options['required'] = 'required';
-            
-            $options['class'] = 'input-large';
+
+            if (!isset($options['class'])) {
+                $options['class'] = 'input-xlarge';
+            }
 
 
             if (empty($label)) {
-            	$h_label = '';
+                $h_label = '';
             }else{
-            	$h_label = '<label class="control-label" >' . $label . '</label>';
+                $h_label = '<label class="control-label">'.$label.'</label>';
             }
 
             $input = $this->Form->input($name, $options);
 
             $html  = '<div class="control-group">';
-       		$html .= $h_label;
-            $html .= '<div class="controls">';
-            $html .= $input;
-            $html .= '</div>';
-            $html .= '</div>';
+            $html .= $h_label;
+            $html .= '<div class="controls">'. $input .'</div></div>';
 
             return  $html;
         }
@@ -65,12 +71,7 @@
 
             $input = $this->Form->input($name, $options);
 
-            $html  = '<div class="control-group">';
-            $html .= $h_label;
-            $html .= "<div class='controls'>";
-            $html .= $input;
-            $html .= '</div>';
-            $html .= '</div>';
+            $html  = '<div class="control-group">'. $h_label."<div class='controls'>".$input.'</div></div>';
 
             return  $html;
         }
