@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+.header{
+	background: #fcfcfc url(../img/bg/h-bg.png);
+	margin-top: -120px;
+
+	position: fixed;
+	width: 100%;
+	z-index: 200;
+}
+
+.header-bottom{
+	background: #fff url(../img/h-bottom.png);
+	height: 45px;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+}
+@media (max-width: 979px) {
+}
+@media (max-width: 767px) {
+	.header{
+		margin-right: -20px;
+		margin-left: -20px;
+	}
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 768px) and (max-width: 979px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 480px) {
+}
+@media (min-width: 980px) {
+}
