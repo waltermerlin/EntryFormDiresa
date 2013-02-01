@@ -25,7 +25,7 @@ class InscriptionsController extends AppController
 
 	public function show_result()
 	{
-			
+		
 	}
 
 	public function printForm()
