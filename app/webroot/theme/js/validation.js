@@ -1,15 +1,16 @@
 $(document).ready(function () {
 	
 
-	$('#new-student').validate({
+	$('#InscriptionAddForm').validate({
 		rules: {
-			"data[Student][email]": {
+			"data[Person][email]": {
 				required: true,
 				email: true
 			},
-			"data[Student][document]": {
+			"data[Person][document]": {
 				required: true,
-				number: true
+				number: true,
+				minlength: 8
 			},
 			"data[Student][cellphone]": {
 				required: true,
@@ -19,9 +20,10 @@ $(document).ready(function () {
 				required: true,
 				date: true	
 			},
-			"data[LaborState][telephone]": {
+			"data[Person][cellphone]": {
 				required: true,
-				number: true
+				number: true,
+				minlength: 8
 			}
 		},
 		highlight: function(label) {
